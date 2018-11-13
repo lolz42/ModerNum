@@ -142,6 +142,61 @@ module.exports =  {
       }),
       new webpack.HashedModuleIdsPlugin(),
 
+      new HtmlCriticalWebpackPlugin({
+  base: path.resolve(__dirname, 'dist'),
+  src: '../index.html',
+  dest: '../index.html',
+  inline: true,
+  minify: false,
+  extract: false,
+  width: 375,
+  height: 565,
+  penthouse: {
+    blockJSRequests: false,
+  }
+}),
+
+      new HtmlCriticalWebpackPlugin({
+  base: path.resolve(__dirname, 'dist'),
+  src: '../index.html',
+  dest: '../index.html',
+  inline: true,
+  minify: false,
+  extract: false,
+  width: 375,
+  height: 565,
+  penthouse: {
+    blockJSRequests: false,
+  }
+}),
+//       new HtmlCriticalWebpackPlugin({
+//   base: path.resolve(__dirname, 'dist'),
+//   src: '../index.html',
+//   dest: '../index.html',
+//   inline: true,
+//   minify: false,
+//   extract: false,
+//   width: 375,
+//   height: 565,
+//   penthouse: {
+//     blockJSRequests: false,
+//   }
+// }),
+//
+//       new HtmlCriticalWebpackPlugin({
+//   base: path.resolve(__dirname, 'dist'),
+//   src: '../index.html',
+//   dest: '../index.html',
+//   inline: true,
+//   minify: false,
+//   extract: false,
+//   width: 375,
+//   height: 565,
+//   penthouse: {
+//     blockJSRequests: false,
+//   }
+// }),
+
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         title: 'ModerNum | Home',
@@ -200,19 +255,7 @@ module.exports =  {
        new ManifestPlugin({
        }),
 
-//       new HtmlCriticalWebpackPlugin({
-//   base: path.resolve(__dirname, 'dist'),
-//   src: '../index.html',
-//   dest: '../index.html',
-//   inline: true,
-//   minify: true,
-//   extract: false,
-//   width: 375,
-//   height: 565,
-//   penthouse: {
-//     blockJSRequests: false,
-//   }
-// }),
+
       new webpack.HotModuleReplacementPlugin(),
 
     ]
