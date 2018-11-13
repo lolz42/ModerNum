@@ -141,10 +141,10 @@ module.exports =  {
         filename: "css/[name].[contenthash].css",
         chunkFilename: "css/[id].[contenthash].css",
       }),
-      new PurifyCSSPlugin({
-          // Give paths to parse for rules. These should be absolute!
-          paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        }),
+      // new PurifyCSSPlugin({
+      //     // Give paths to parse for rules. These should be absolute!
+      //     paths: glob.sync(path.join(__dirname, 'src/*.html')),
+      //   }),
       new webpack.HashedModuleIdsPlugin(),
 
       new HtmlCriticalWebpackPlugin({
@@ -161,19 +161,19 @@ module.exports =  {
   }
 }),
 
-      new HtmlCriticalWebpackPlugin({
-  base: path.resolve(__dirname, 'dist'),
-  src: '../index.html',
-  dest: '../index.html',
-  inline: true,
-  minify: false,
-  extract: false,
-  width: 375,
-  height: 565,
-  penthouse: {
-    blockJSRequests: false,
-  }
-}),
+//       new HtmlCriticalWebpackPlugin({
+//   base: path.resolve(__dirname, 'dist'),
+//   src: '../index.html',
+//   dest: '../index.html',
+//   inline: true,
+//   minify: false,
+//   extract: false,
+//   width: 375,
+//   height: 565,
+//   penthouse: {
+//     blockJSRequests: false,
+//   }
+// }),
 //       new HtmlCriticalWebpackPlugin({
 //   base: path.resolve(__dirname, 'dist'),
 //   src: '../index.html',
