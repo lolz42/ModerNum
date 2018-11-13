@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const production = process.env.NODE_ENV === 'production';
 const ManifestPlugin = require('webpack-manifest-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const glob = require('glob');
 // the path(s) that should be cleaned
 let pathsToClean = [
   'dist',
@@ -138,8 +140,11 @@ module.exports =  {
       new MiniCssExtractPlugin({
         filename: "css/[name].[contenthash].css",
         chunkFilename: "css/[id].[contenthash].css",
-
       }),
+      new PurifyCSSPlugin({
+          // Give paths to parse for rules. These should be absolute!
+          paths: glob.sync(path.join(__dirname, 'src/*.html')),
+        }),
       new webpack.HashedModuleIdsPlugin(),
 
       new HtmlCriticalWebpackPlugin({
@@ -196,6 +201,8 @@ module.exports =  {
 //     blockJSRequests: false,
 //   }
 // }),
+
+
 
       new HtmlWebpackPlugin({
         template: 'src/index.html',
