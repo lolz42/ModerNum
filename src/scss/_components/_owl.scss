@@ -1,0 +1,27 @@
+//main: ../style.scss
+
+.jumbotron {
+  background-color: transparent !important;
+margin-top: 5rem !important;
+
+
+  .owl-carousel {
+    width: 100%;
+    z-index: 5;
+  }
+
+  .owl-item {
+    display: flex;
+    justify-content: center;
+
+      color:white !important;
+      h4{
+        color:white !important;
+      }
+
+      .item {
+        width: 880px;
+      }
+  }
+
+}

@@ -1,0 +1,405 @@
+//main: ../style.scss
+
+body {
+  background-color: #f7f7f7 !important;
+  @include media-breakpoint-down(sm) {
+    font-size: 0.88rem !important;
+  }
+}
+/*----------- Mobile -----------*/
+.mobile-overlay {
+  z-index: 50;
+  position: fixed;
+  content: '';
+  width: 100% !important;
+  height: 0;
+  background-color: $indigo;
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+  }
+
+  .mobile-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transform: translateY(-100px);
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+
+    &.active {
+      transition: all 0.3s ease-in-out;
+      visibility: visible;
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+    ul {
+      font-family: 'Source Sans Pro', sans-serif !important;
+      text-transform: uppercase;
+      font-weight: 700 !important;
+      font-size: $link-size;
+      margin-top: 9rem !important;
+
+      li {
+        padding: .8rem 0rem !important;
+
+        .nav-link {
+          &:hover {
+            color: $black !important;
+          }
+        }
+      }
+    }
+  }
+}
+/*----------- Button -----------*/
+.btn {
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  margin-top: 1rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.btn-outline-secondary {
+  min-width: 300px !important;
+  @include media-breakpoint-down(sm) {
+    min-width: 250px !important;
+  }
+
+  &:hover {
+    color: $indigo !important;
+    i{
+      color:$indigo;
+    }
+  }
+}
+
+.btn-primary {
+  width: 220px !important;
+
+  &:hover {
+    background-color: transparent !important;
+    color: $black !important;
+    border-color: $black !important;
+  }
+}
+
+.btn-primary-white {
+  @extend .btn-primary;
+
+  &:hover {
+    color: white !important;
+    border-color: #fff !important;
+  }
+}
+/*----------- Section -----------*/
+.section {
+  padding: 7rem 0 !important;
+  @include media-breakpoint-down(lg) {
+    padding: 3rem 0 !important;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 2rem 0 !important;
+  }
+
+  .span-purple {
+    color: $indigo !important;
+    font-weight: 600 !important;
+  }
+}
+/*----------- Headings -----------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizelegibility;
+}
+
+strong {
+  font-weight: 600 !important;
+  font-family: 'Raleway', sans-serif !important;
+  line-height: 1.2 !important;
+}
+
+.display-3 {
+  @include media-breakpoint-down(sm) {
+    font-size: 2rem !important;
+  }
+}
+
+.display-4 {
+  @include media-breakpoint-down(sm) {
+    font-size: 1.25rem !important;
+  }
+}
+
+.display-5 {
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  @include media-breakpoint-down(sm) {
+    font-size: 0.94rem !important;
+    font-weight: 400 !important;
+  }
+}
+
+h1 {
+  @include media-breakpoint-down(sm) {
+    font-size: 1.25rem !important;
+  }
+}
+
+h2 {
+  font-size: 1.38rem !important;
+  @include media-breakpoint-down(sm) {
+    font-size: 0.94rem !important;
+  }
+}
+
+h3 {
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+}
+
+h4 {
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  @include media-breakpoint-down(sm) {
+    font-size: 0.88rem !important;
+    font-weight: 400 !important;
+    text-transform: capitalize !important;
+  }
+}
+
+h5 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+h6 {
+  font-size: $link-size;
+  text-transform: uppercase;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  color: white !important;
+  font-family: 'Raleway', sans-serif !important;
+}
+/*=============================================>>>>>
+= Header =
+===============================================>>>>>*/
+header {
+  position: relative;
+  // .navbar-toggler {
+  //   position: fixed;
+  // }
+  .navbar {
+    z-index: 4 !important;
+    @include media-breakpoint-down(sm) {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+      z-index: 70 !important;
+    }
+
+    .upper-part {
+      font-weight: 400 !important;
+      font-family: 'Montserrat', sans-serif !important;
+
+      .mail,
+      .number {
+        height: 7px !important;
+      }
+
+      i {
+        padding-right: 0.7rem;
+        line-height: 1.7 !important;
+      }
+
+      .nav-link {
+        padding: 0;
+        line-height: 0;
+        letter-spacing: 0.7px;
+        font-size: 0.9rem;
+        // height: 25px !impor
+      }
+    }
+
+    .down-part {
+      font-family: 'Source Sans Pro', sans-serif !important;
+      text-transform: uppercase;
+      font-weight: 700 !important;
+      font-size: $link-size;
+
+      .nav-link {
+        transition: all 0.3s !important;
+      }
+    }
+  }
+  /*----------- Navbar Dark -----------*/
+  .nav-dark {
+    .upper-part {
+      .nav-link {
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    .down-part {
+      .nav-link {
+        &:hover {
+          color: $indigo !important;
+        }
+      }
+    }
+
+    i {
+      color: white;
+      line-height: 2.3;
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: white !important;
+      }
+    }
+
+
+  }
+  /*----------- Navbar Light -----------*/
+  .nav-light {
+    .upper-part {
+      i {
+        color: $indigo;
+      }
+
+      .nav-link {
+        color: $indigo !important;
+
+        &:hover {
+          color: $indigo !important;
+        }
+      }
+    }
+
+    .down-part {
+      .nav-link {
+        color: $black !important;
+
+        &:hover {
+          color: $indigo !important;
+        }
+      }
+    }
+  }
+}
+/*----------- Header Home Page -----------*/
+.home_header {
+  background: url("../../assets/images/cover.jpg");
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #1A1F83;
+    opacity: 0.4;
+    position: absolute;
+    z-index: 3;
+  }
+}
+/*----------- Jumbotron -----------*/
+
+.jumbotron {}
+
+.jumbo-second {
+  background-position: 30% center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(#7e91bf,#1d2c4e,#0c1325) !important;
+    opacity: 0.85 !important;
+  }
+}
+/*=============================================>>>>>
+= Button Animation =
+===============================================>>>>>*/
+
+.menu__toggler {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  height: 28px;
+  width: 28px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  span,
+  span::after,
+  span::before {
+    position: absolute;
+    content: '';
+    width: 28px;
+    height: 2.5px;
+    background: $indigo;
+    border-radius: 20px;
+    transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  span::before {
+    top: -8px;
+  }
+
+  span::after {
+    top: 8px;
+  }
+
+  &.active > span {
+    background: transparent;
+  }
+
+  &.active > span::after,
+  &.active > span::before {
+    background: #fff;
+    top: 0;
+  }
+
+  &.active > span::before {
+    transform: rotate(-225deg);
+  }
+
+  &.active > span::after {
+    transform: rotate(225deg);
+  }
+}
+/*=============================================>>>>>
+= Animate CSS =
+===============================================>>>>>*/
+.delay-5 {
+  animation-delay: 0.5s !important;
+}
